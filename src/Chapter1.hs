@@ -8,7 +8,7 @@ runtime exceptions!
 We appreciate your curiosity and will try to provide you with all the necessary
 equipment for your training before the battle in the real FP world. Learning
 Functional Programming can be challenging. But we designed this training to be
-beginner-friendly and helpful to everyone!
+beginner-friendly and helpful to everyone
 
 Practice your functional skills, and choose your class in the end, who you want
 to become: Monad Wizard, Exceptions Crusher, Recursion Priest, Free Fighter,
