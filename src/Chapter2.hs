@@ -352,7 +352,10 @@ from it!
 ghci> :l src/Chapter2.hs
 -}
 subList :: Int -> Int -> [a] -> [a]
-subList = error "subList: Not implemented!"
+subList a b _
+  | a < 0 = []
+  | b < 0 = []
+subList a b c = (b - a + 1) `take` drop a c
 
 {- |
 =⚔️= Task 4
@@ -364,8 +367,8 @@ Implement a function that returns only the first half of a given list.
 >>> firstHalf "bca"
 "b"
 -}
--- PUT THE FUNCTION TYPE IN HERE
-firstHalf l = error "firstHalf: Not implemented!"
+firstHalf :: [a] -> [a]
+firstHalf l = take (div (length l) 2) l
 
 
 {- |
@@ -517,7 +520,9 @@ True
 >>> isThird42 [42, 42, 0, 42]
 False
 -}
-isThird42 = error "isThird42: Not implemented!"
+isThird42 :: (Eq a, Num a) => [a] -> Bool
+isThird42 (_:_:42:_) = True
+isThird42 _ = False
 
 
 {- |
@@ -622,7 +627,8 @@ Implement a function that duplicates each element of the list
 
 -}
 duplicate :: [a] -> [a]
-duplicate = error "duplicate: Not implemented!"
+duplicate [] = []
+duplicate (x:xs) = x : x : duplicate xs
 
 
 {- |
@@ -637,7 +643,11 @@ Write a function that takes elements of a list only in even positions.
 >>> takeEven [2, 1, 3, 5, 4]
 [2,3,4]
 -}
-takeEven = error "takeEven: Not implemented!"
+takeEven :: [a] -> [a]
+takeEven (x : _ : xs) = x : takeEven xs
+takeEven (x : _) = [x]
+takeEven [] = []
+?????????????????????????????????/??/ Я НЕ ПОНИМАЮ КАК ЭТО РАБОТАЕТ
 
 {- |
 =🛡= Higher-order functions
